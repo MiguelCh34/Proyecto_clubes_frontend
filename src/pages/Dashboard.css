@@ -1,0 +1,49 @@
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background-color: #c9302c;
+}
+
+.section-title {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.dashboard-table th {
+  background-color: #f4f4f4;
+}
+
+.dashboard-table tr:hover {
+  background-color: #f1f1f1;
+}
