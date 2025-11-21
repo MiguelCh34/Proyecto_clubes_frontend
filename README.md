@@ -1,16 +1,62 @@
-# React + Vite
+# Frontend - Gestión de Clubes (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este frontend consume la API del backend utilizando un sistema de autenticación con JWT, permitiendo control de sesión y acceso solo a rutas protegidas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías utilizadas
 
-## React Compiler
+- React con Vite
+- React Router DOM
+- Fetch API
+- CSS Modules / Material UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✔ Login conectado al backend  
+✔ Token almacenado en `localStorage`  
+✔ Ruta protegida (**Dashboard**)  
+✔ Visualización de datos desde API  
+✔ CRUD para Clubes (Crear, Listar, Editar, Eliminar)
+
+## ⚙ Configuración
+
+1. Instalar dependencias:
+
+npm install
+
+
+2. Crear archivo `.env` en la raíz:
+
+
+VITE_API_URL=http://127.0.0.1:5000
+
+## ▶️ Ejecutar el proyecto
+
+Frontend disponible en: http://localhost:5173
+
+## 🔑 Autenticación
+
+Cuando el usuario inicia sesión correctamente, el token se almacena: localStorage.setItem("access_token", token);
+
+El sistema verifica si existe token para permitir el acceso al Dashboard.
+
+## 🧪 CRUD desde el frontend
+
+El Dashboard permite:
+
+- Crear club
+- Listar clubes
+- Editar club
+- Eliminar club
+
+Todos estos consumen la API usando:
+
+```js
+fetch(`${import.meta.env.VITE_API_URL}/club/...`, {
+   headers: {
+     Authorization: `Bearer ${token}`
+   }
+})
