@@ -5,7 +5,9 @@ import "./Register.css";
 export default function Register() {
   const [formData, setFormData] = useState({
     nombre: "",
+    apellido: "",
     email: "",
+    celular: "",
     password: "",
     confirmPassword: ""
   });
@@ -26,8 +28,8 @@ export default function Register() {
     setError("");
     
     // Validaciones
-    if (!formData.nombre || !formData.email || !formData.password || !formData.confirmPassword) {
-      setError("Por favor completa todos los campos.");
+    if (!formData.nombre || !formData.apellido || !formData.email || !formData.password || !formData.confirmPassword) {
+      setError("Por favor completa todos los campos obligatorios.");
       return;
     }
 
@@ -51,7 +53,9 @@ export default function Register() {
         },
         body: JSON.stringify({
           nombre: formData.nombre,
+          apellido: formData.apellido,
           email: formData.email,
+          celular: formData.celular,
           password: formData.password
         }),
       });
@@ -112,7 +116,7 @@ export default function Register() {
         <div className="register-form">
           {/* Nombre */}
           <div className="form-group">
-            <label className="form-label">Nombre completo</label>
+            <label className="form-label">Nombre *</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -122,17 +126,39 @@ export default function Register() {
                 type="text"
                 name="nombre"
                 className="form-input"
-                placeholder="Juan Pérez"
+                placeholder="Juan"
                 value={formData.nombre}
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
+                required
+              />
+            </div>
+          </div>
+
+          {/* Apellido */}
+          <div className="form-group">
+            <label className="form-label">Apellido *</label>
+            <div className="input-wrapper">
+              <svg className="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input
+                type="text"
+                name="apellido"
+                className="form-input"
+                placeholder="Pérez"
+                value={formData.apellido}
+                onChange={handleChange}
+                onKeyPress={handleKeyPress}
+                required
               />
             </div>
           </div>
 
           {/* Email */}
           <div className="form-group">
-            <label className="form-label">Correo electrónico</label>
+            <label className="form-label">Correo electrónico *</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -146,13 +172,34 @@ export default function Register() {
                 value={formData.email}
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
+                required
+              />
+            </div>
+          </div>
+
+          {/* Celular */}
+          <div className="form-group">
+            <label className="form-label">Celular (opcional)</label>
+            <div className="input-wrapper">
+              <svg className="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              <input
+                type="tel"
+                name="celular"
+                className="form-input"
+                placeholder="0999999999"
+                value={formData.celular}
+                onChange={handleChange}
+                onKeyPress={handleKeyPress}
               />
             </div>
           </div>
 
           {/* Password */}
           <div className="form-group">
-            <label className="form-label">Contraseña</label>
+            <label className="form-label">Contraseña *</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -162,17 +209,18 @@ export default function Register() {
                 type="password"
                 name="password"
                 className="form-input"
-                placeholder="Contraseña"
+                placeholder="Mínimo 6 caracteres"
                 value={formData.password}
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
+                required
               />
             </div>
           </div>
 
           {/* Confirmar Password */}
           <div className="form-group">
-            <label className="form-label">Confirmar contraseña</label>
+            <label className="form-label">Confirmar contraseña *</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -186,6 +234,7 @@ export default function Register() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
+                required
               />
             </div>
           </div>
