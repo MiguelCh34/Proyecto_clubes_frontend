@@ -1,0 +1,61 @@
+/* Personas Container */
+.personas-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0f172a;
+}
+
+/* Main Content */
+.personas-main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 32px;
+}
+
+/* Header */
+.personas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.personas-title {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.personas-subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0;
+}
+
+.btn-nueva-persona {
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  text-transform: none !important;
+  font-weight: bold !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .personas-main-content {
+    margin-left: 70px;
+    padding: 16px;
+  }
+
+  .personas-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .btn-nueva-persona {
+    width: 100%;
+  }
+}

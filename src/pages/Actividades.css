@@ -1,0 +1,61 @@
+/* Forzar tamaño mínimo en el Grid item */
+.MuiGrid-root > .MuiGrid-item {
+  min-width: 280px;
+  max-width: 350px;
+}
+
+/* Animación para las tarjetas de actividad */
+.activity-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100% !important;
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 280px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  border-color: #3b82f6 !important;
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+/* Estilo para el círculo del icono */
+.icon-container {
+  background-color: rgba(59, 130, 246, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.activity-card:hover .icon-container {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Estilo para el nombre de la actividad */
+.actividad-nombre {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin: 12px 0;
+  height: 48px;
+  line-height: 24px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+/* Empuja los botones al final */
+.actividad-acciones {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

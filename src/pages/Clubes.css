@@ -1,0 +1,256 @@
+/* Contenedor Principal */
+.clubes-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: white;
+}
+
+/* Contenido Principal */
+.clubes-main-content {
+  flex-grow: 1;
+  margin-left: 260px;
+  padding: 32px;
+}
+
+/* Header */
+.clubes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.clubes-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.clubes-subtitle {
+  color: #94a3b8;
+  margin: 0;
+  font-size: 16px;
+}
+
+.btn-nuevo-club {
+  background-color: #3b82f6 !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  text-transform: none !important;
+  font-weight: bold !important;
+}
+
+/* Forzar tamaño mínimo en el Grid item */
+.MuiGrid-root > .MuiGrid-item {
+  min-width: 280px;
+  max-width: 350px;
+}
+
+/* Tarjetas de Clubes */
+.club-card {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease !important;
+  
+  /* Tamaño fijo */
+  width: 100% !important;
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.club-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+.club-card-content {
+  padding: 24px !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.icon-container {
+  background-color: rgba(59, 130, 246, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.club-card:hover .icon-container {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.club-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.club-tipo-chip {
+  color: #3b82f6 !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  font-weight: bold !important;
+}
+
+.club-id {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.club-nombre {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  height: 48px;
+  line-height: 24px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.club-descripcion {
+  color: #94a3b8;
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  height: 60px;
+  overflow: hidden;
+  text-align: center;
+  flex: 1;
+}
+
+.club-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-editar-club {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  text-transform: none !important;
+}
+
+.btn-eliminar-club {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+}
+
+.btn-eliminar-club:hover {
+  background-color: #ef4444 !important;
+  color: white !important;
+}
+
+/* Modal */
+.clubes-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clubes-modal-box {
+  background-color: #1e293b;
+  padding: 32px;
+  width: 450px;
+  max-width: 95%;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.modal-title {
+  margin-bottom: 24px !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-input {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+}
+
+.modal-input .MuiFilledInput-root {
+  color: white !important;
+}
+
+.modal-input .MuiInputLabel-root {
+  color: #94a3b8 !important;
+}
+
+.modal-input .MuiFilledInput-root:before,
+.modal-input .MuiFilledInput-root:after {
+  border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Estilos para el Select de Sedes */
+.modal-input .MuiSelect-select {
+  color: white !important;
+}
+
+.modal-input .MuiFormHelperText-root {
+  color: #94a3b8 !important;
+}
+
+.modal-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-cancelar {
+  color: #94a3b8 !important;
+  text-transform: none !important;
+}
+
+.btn-guardar {
+  background-color: #3b82f6 !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+}
+
+.btn-guardar:hover {
+  background-color: #2563eb !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clubes-main-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .clubes-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .clubes-modal-box {
+    width: 90%;
+    max-width: 450px;
+  }
+}

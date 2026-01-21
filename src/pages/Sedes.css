@@ -1,0 +1,58 @@
+/* Forzar tamaño mínimo en el Grid item */
+.MuiGrid-root > .MuiGrid-item {
+  min-width: 280px;
+  max-width: 350px;
+}
+
+/* Animación para las tarjetas de sede */
+.sede-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  width: 100% !important;
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 280px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.sede-card:hover {
+  transform: translateY(-8px);
+  background: rgba(59, 130, 246, 0.05) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+/* Estilo para el círculo del icono */
+.icon-container {
+  background-color: rgba(59, 130, 246, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.sede-card:hover .icon-container {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Estilo para la ubicación */
+.sede-ubicacion {
+  font-size: 14px;
+  color: #94a3b8;
+  text-align: center;
+  height: 48px;
+  overflow: hidden;
+}
+
+/* Empuja los botones al final */
+.sede-acciones {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
